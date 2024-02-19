@@ -9,7 +9,7 @@ export default defineNuxtPlugin({
       navigation: null,
     }))
 
-    const { data, error } = await useAsyncData('settings', () => {
+    const { data, error } = await useAsyncData('navigation', () => {
       return useEnterSpeed<EnterspeedNavigationResponse>({
         handles: ['navigation']
       })

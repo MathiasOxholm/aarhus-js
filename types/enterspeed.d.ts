@@ -38,13 +38,21 @@ export type EnterspeedNavigationResponse = EnterspeedUrlResponse & {
   }
 }
 
-export type EnterspeedContentPage = EnterspeedUrlResponse & {
-  route: {
-    type: EnterspeedPageType
-    headline: string
-    seoMetaDescription: string
-    blocks: unknown[]
+export type EnterspeedContentPageRoute = {
+  type: EnterspeedPageType
+  headline: string
+  seoMetaDescription: string
+  blocks: EnterspeedBlock[]
+  url: string
+  children: EnterspeedContentPageRoute[]
+  hero?: {
+    header?: string
+    description?: string
   }
+}
+
+export type EnterspeedContentPage = EnterspeedUrlResponse & {
+  route: EnterspeedContentPageRoute
 }
 
 export type EnterspeedProduct = {
@@ -62,4 +70,10 @@ export type EnterspeedProductList = EnterspeedContentPage & {
   route: {
     products: EnterspeedProduct[]
   }
+}
+
+export type EnterspeedBlockType = 'blockText'
+
+export type EnterspeedBlock = {
+  alias: EnterspeedBlockType
 }

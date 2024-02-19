@@ -7,21 +7,21 @@ useHead({
 
 const { data } = await useAsyncData('enterspeed-home', () => {
   return useEnterSpeed<EnterspeedContentPage>({
-    handles: ['home']
+    url: '/'
   })
 })
 </script>
 
 <template>
   <div>
-    <div class="h-screen flex items-center pt-12">
+    <div v-if="data" class="h-screen flex items-center pt-12">
       <UContainer class="text-center">
         <h1 class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
-          Working with Uber flexible fronted Data Orchestration at scale
+          {{ data.route?.hero?.header }}
         </h1>
 
         <p class="mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300">
-          Data Orchestration in 3 easy steps + Novicell's favourite tool for the job.
+          {{ data.route?.hero?.description }}
         </p>
 
         <UButton 
@@ -37,8 +37,8 @@ const { data } = await useAsyncData('enterspeed-home', () => {
       </UContainer>
     </div>
 
-    <Page>
+    <UContainer class="py-20">
       <Code :code="data" />
-    </Page>
+    </UContainer>
   </div>
 </template>

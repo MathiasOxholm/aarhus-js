@@ -25,6 +25,6 @@ body {
 .page-enter-from, 
 .page-leave-to {
   opacity: 0;
-  transform: translateY(-20px) scale(0.98);
+  transform: translateY(-20px);
 }
 </style>
