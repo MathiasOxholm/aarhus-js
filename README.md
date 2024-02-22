@@ -1,6 +1,7 @@
 # AarhusJS February 2024 Showcase
 ![Nuxt version](https://img.shields.io/badge/Nuxt%20version-3.10.2-00DC82)
 ![Node version](https://img.shields.io/badge/Node%20version-20.11.0-026E00)
+
 Demo link: https://aarhus-js.vercel.app/
 
 ## Setup
