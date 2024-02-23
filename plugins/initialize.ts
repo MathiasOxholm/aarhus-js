@@ -9,12 +9,10 @@ export default defineNuxtPlugin({
       navigation: null,
     }))
 
-    const { data, error } = await useAsyncData('navigation', () => {
+    const { data, error } = await useAsyncData('root', () => {
       return useEnterSpeed<EnterspeedNavigationResponse>({
-        handles: ['navigation']
+        handles: ['navigation', 'translations', 'settings']
       })
-    }, {
-      pick: ["views"]
     })
 
 

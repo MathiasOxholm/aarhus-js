@@ -19,7 +19,7 @@ export async function useEnterSpeed<T>(input: UseEnterspeedInput) {
 
   if (input.handles?.length) {
     input.handles.forEach((handle) => {
-      enterspeedSearchParams.set('handle', handle)
+      enterspeedSearchParams.append('handle', handle)
     })
   }
 

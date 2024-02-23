@@ -17,7 +17,7 @@ export type UseEnterspeedInput = {
   handles?: EnterspeedHandle[]
 }
 
-export type EnterspeedHandle = 'navigation' | 'home' | 'currency'
+export type EnterspeedHandle = 'navigation' | 'home' | 'currency' | 'translations' | 'settings'
 export type EnterspeedPageType = 'contentPage' | 'products' | 'product'
 
 export type EnterspeedNavigationItem = {
