@@ -2,6 +2,9 @@
 useHead({
   titleTemplate: (titleChunk: string | undefined) => {
     return titleChunk ? `${titleChunk} | Aarhus JS` : 'Aarhus JS';
+  },
+  bodyAttrs: {
+    class: 'dark'
   }
 });
 </script>

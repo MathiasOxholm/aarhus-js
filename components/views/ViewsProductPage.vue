@@ -11,9 +11,10 @@ defineProps<{
       v-if="data" 
       :title="data.name" 
       :description="data.description"
-      :is-sub-page="true"
+      :is-sub-page="false"
       :badge="data.type"
     >
-    <p>{{ data.price }} {{ data.currency.defaultCurrency }}</p>
+    <p>{{ data.price }} {{ data.currency?.defaultCurrency }}</p>
+    <pre>{{ data }}</pre>
   </Page>
 </template>

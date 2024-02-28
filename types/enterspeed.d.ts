@@ -1,4 +1,5 @@
 import type { HorizontalNavigationLink } from '#ui/types';
+import type { SiteSettings } from './app';
 
 export type EnterspeedResponseMeta = {
   status: number
@@ -17,8 +18,8 @@ export type UseEnterspeedInput = {
   handles?: EnterspeedHandle[]
 }
 
-export type EnterspeedHandle = 'navigation' | 'home' | 'currency' | 'translations' | 'settings'
-export type EnterspeedPageType = 'contentPage' | 'products' | 'product'
+export type EnterspeedHandle = 'navigation' | 'home' | 'currency' | 'translations' | 'settings' | string
+export type EnterspeedPageType = 'contentPage' | 'products' | 'product' | 'home'
 
 export type EnterspeedNavigationItem = {
   label: string
@@ -35,6 +36,7 @@ export type EnterspeedNavigation = {
 export type EnterspeedNavigationResponse = EnterspeedUrlResponse & {
   views: {
     navigation: EnterspeedNavigation
+    settings: SiteSettings
   }
 }
 
@@ -48,11 +50,20 @@ export type EnterspeedContentPageRoute = {
   hero?: {
     header?: string
     description?: string
+    ctaCaption: string
+    ctaLink: {
+      url: string
+      name: string
+    }
   }
 }
 
 export type EnterspeedContentPage = EnterspeedUrlResponse & {
   route: EnterspeedContentPageRoute
+}
+
+type EnterspeedProductContent = {
+  blocks: EnterspeedBlock[]
 }
 
 export type EnterspeedProduct = {
@@ -61,8 +72,16 @@ export type EnterspeedProduct = {
   description: string
   price: number
   href: string
+  sku: string
   currency: {
     defaultCurrency: string
+  }
+  content: EnterspeedProductContent[]
+}
+
+export type EnterspeedProductView = {
+  views: {
+    [key: string]: EnterspeedProduct
   }
 }
 
@@ -72,7 +91,7 @@ export type EnterspeedProductList = EnterspeedContentPage & {
   }
 }
 
-export type EnterspeedBlockType = 'blockText'
+export type EnterspeedBlockType = 'blockText' | 'blockImage'
 
 export type EnterspeedBlock = {
   alias: EnterspeedBlockType

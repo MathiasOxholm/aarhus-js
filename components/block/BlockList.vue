@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col gap-10">
     <BlockItem
       v-for="(block, index) in blocks"
       :key="`block-${index}`"

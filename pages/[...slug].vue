@@ -5,6 +5,7 @@ definePageMeta({
   key: route => route.fullPath
 })
 
+const home = resolveComponent('LazyViewsHome');
 const contentPage = resolveComponent('LazyViewsContentPage');
 const productList = resolveComponent('LazyViewsProductList');
 const productPage = resolveComponent('LazyViewsProductPage');
@@ -26,6 +27,9 @@ const viewTemplate = computed(() => {
   }
 
   switch (type) {
+    case 'home':
+      view = home
+      break
     case 'contentPage':
       view = contentPage
       break

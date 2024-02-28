@@ -10,7 +10,7 @@ defineProps<{
   <Page 
       v-if="data" 
       :title="data.headline" 
-      :is-sub-page="true"
+      :is-sub-page="false"
       :badge="data.type"
     >
 

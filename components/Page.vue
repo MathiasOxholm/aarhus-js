@@ -20,7 +20,7 @@ useHead({
 
 <template>
   <div>
-    <UContainer :class="{ 'py-40' : !isSubPage }">
+    <UContainer :class="{ 'py-32' : !isSubPage }">
       <div class="flex justify-between">
         <div class="mb-10">
           <h1 

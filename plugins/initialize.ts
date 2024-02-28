@@ -7,11 +7,12 @@ export default defineNuxtPlugin({
   async setup() {
     const appState = useState<AppState>('app', () => ref({
       navigation: null,
+      settings: null
     }))
 
     const { data, error } = await useAsyncData('root', () => {
       return useEnterSpeed<EnterspeedNavigationResponse>({
-        handles: ['navigation', 'translations', 'settings']
+        handles: ['navigation', 'translations', 'settings', 'currency']
       })
     })
 
@@ -27,6 +28,7 @@ export default defineNuxtPlugin({
 
     if (data.value) {
       appState.value.navigation = data.value.views.navigation.navigationItems
+      appState.value.settings = data.value.views.settings
     }
 
     return {

@@ -11,7 +11,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="block-text" v-html="block.text" />
+  <BlockBase :badge="block.alias">
+    <div class="block-text" v-html="block.text" />
+  </BlockBase>
 </template>
 
 <style scoped lang="postcss">
@@ -20,6 +22,10 @@ defineProps<{
 
   :deep(p) {
     @apply mb-4;
+
+    &:last-child {
+      @apply mb-0;
+    }
   }
 }
 </style>

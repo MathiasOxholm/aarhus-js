@@ -10,7 +10,7 @@ defineProps<{
   <Page 
       v-if="data" 
       :title="data.headline" 
-      :is-sub-page="true"
+      :is-sub-page="false"
       :badge="data.type"
     >
     <ul class="grid grid-cols-3 gap-4">
@@ -23,10 +23,12 @@ defineProps<{
           <p>{{ product.description }}</p>
 
           <template #footer>
-            <UButton :to="product.href">View Product</UButton>
+            <UButton :to="`/products/${product.sku}`">View Product</UButton>
           </template>
         </UCard>
       </li>
     </ul>
+
+    <Code :code="data" class="mt-20" />
   </Page>
 </template>

@@ -1,18 +1,5 @@
 <script setup lang="ts">
-import type { HorizontalNavigationLink } from '#ui/types';
-
-const links: HorizontalNavigationLink[] = [ 
-  {
-    label: 'Spaghetti code',
-    icon: 'i-heroicons-trash',
-    to: '/spaghetti',
-  }, 
-  {
-    label: 'Enterspeed',
-    icon: 'i-heroicons-fire',
-    to: '/enterspeed'
-  }
-]
+const { $appState } = useNuxtApp()
 </script>
 
 <template>
@@ -21,11 +8,15 @@ const links: HorizontalNavigationLink[] = [
   >
     <UContainer class="flex justify-between items-center">
       <div>
-        <NuxtLink to="/" class="text-2xl font-bold flex-1">Aarhus JS</NuxtLink>
+        <NuxtLink to="/" class="text-2xl font-bold flex-1">{{ $appState.settings?.siteName }}</NuxtLink>
       </div>
 
       <div>
-        <UHorizontalNavigation :links="links" class="justify-end" />
+        <UHorizontalNavigation 
+          v-if="$appState.navigation" 
+          :links="$appState.navigation" 
+          class="justify-end" 
+        />
       </div>
     </UContainer>
   </header>

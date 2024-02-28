@@ -6,6 +6,7 @@ const props = defineProps<{
 }>()
 
 const blockText = resolveComponent('LazyBlockText')
+const blockImage = resolveComponent('LazyBlockImage')
 
 const viewTemplate = computed(() => {
   let view = null
@@ -19,6 +20,9 @@ const viewTemplate = computed(() => {
   switch (type) {
     case 'blockText':
       view = blockText
+      break
+    case 'blockImage':
+      view = blockImage
       break
     default:
       view = null
