@@ -14,6 +14,12 @@ const { data } = await useAsyncData(route.path, () => {
     return data?.views[id]
   }
 })
+
+onMounted(() => {
+  if (process.client && window.hljs) {  
+    window.hljs.highlightAll();
+  }
+});
 </script>
 
 <template>

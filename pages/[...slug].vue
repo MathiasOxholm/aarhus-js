@@ -47,7 +47,7 @@ const viewTemplate = computed(() => {
 })
 
 onMounted(() => {
-  if (process.client && window.hljs) {
+  if (process.client && window.hljs) {  
     window.hljs.highlightAll();
   }
 });
