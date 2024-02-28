@@ -45,6 +45,12 @@ const viewTemplate = computed(() => {
 
   return view
 })
+
+onMounted(() => {
+  if (process.client && window.hljs) {  
+    window.hljs.highlightAll();
+  }
+});
 </script>
 
 <template>
