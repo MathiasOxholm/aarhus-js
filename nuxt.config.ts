@@ -17,7 +17,23 @@ export default defineNuxtConfig({
     head: {
       bodyAttrs: {
         class: 'dark'
-      }
+      },
+      script: [
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js",
+          type: "text/javascript"
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js",
+          type: "text/javascript"
+        }
+      ],
+      link: [
+        {
+          href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css",
+          rel: "stylesheet"
+        }
+      ]
     }
   }
 })
