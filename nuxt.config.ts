@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     pageTransition: {
       name: 'page',
       mode: 'out-in'
+    },
+    head: {
+      bodyAttrs: {
+        class: 'dark'
+      }
     }
   }
 })

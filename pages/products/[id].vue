@@ -3,6 +3,7 @@ import type { EnterspeedProductView } from '@/types/enterspeed';
 
 const route = useRoute();
 const id = route.params.id?.toString();
+const { $appState } = useNuxtApp();
 
 const { data } = await useAsyncData(route.path, () => {
   return useEnterSpeed<EnterspeedProductView>({
@@ -23,7 +24,10 @@ const { data } = await useAsyncData(route.path, () => {
       :is-sub-page="false"
       :badge="data.type"
     >
-    <p class="text-3xl font-bold text-primary">Price: {{ data.price }} {{ data.currency?.defaultCurrency }}</p>
+    <div class="text-xl font-bold">
+      <p>Price: {{ data.price }} {{ $appState.currency?.defaultCurrency }}</p>
+      <p>Sku: {{ data.sku }}</p>
+    </div>
 
     <BlockList 
       v-if="data.content[0].blocks?.length" 

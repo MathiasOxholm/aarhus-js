@@ -7,7 +7,8 @@ export default defineNuxtPlugin({
   async setup() {
     const appState = useState<AppState>('app', () => ref({
       navigation: null,
-      settings: null
+      settings: null,
+      currency: null
     }))
 
     const { data, error } = await useAsyncData('root', () => {
@@ -29,6 +30,7 @@ export default defineNuxtPlugin({
     if (data.value) {
       appState.value.navigation = data.value.views.navigation.navigationItems
       appState.value.settings = data.value.views.settings
+      appState.value.currency = data.value.views.currency
     }
 
     return {

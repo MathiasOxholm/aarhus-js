@@ -13,7 +13,7 @@ defineProps<{
       :is-sub-page="false"
       :badge="data.type"
     >
-    <ul class="grid grid-cols-3 gap-4">
+    <ul class="grid grid-cols-3 gap-6">
       <li v-for="product in data.products" :key="product.name">
         <UCard>
           <template #header>

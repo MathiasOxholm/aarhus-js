@@ -14,7 +14,7 @@ defineProps<{
 
 <template>
   <BlockBase :badge="block.alias">
-    <img src="https://picsum.photos/900/400" :alt="block.altText" class="w-full object-cover mt-8 rounded-xl" />
+    <img :key="block.alias" src="https://picsum.photos/900/400" :alt="block.altText" class="w-full object-cover mt-8 rounded-xl" />
     <p class="mt-8 text-xl font-bold">{{ block.altText }}</p>
   </BlockBase>
 </template>

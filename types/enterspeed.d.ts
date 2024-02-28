@@ -33,10 +33,15 @@ export type EnterspeedNavigation = {
   navigationItems: HorizontalNavigationLink[]
 }
 
+export type EnterspeedCurrency = {
+  defaultCurrency: string
+}
+
 export type EnterspeedNavigationResponse = EnterspeedUrlResponse & {
   views: {
     navigation: EnterspeedNavigation
     settings: SiteSettings
+    currency: EnterspeedCurrency
   }
 }
 

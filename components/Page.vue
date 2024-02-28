@@ -33,7 +33,7 @@ useHead({
             {{ title }}
           </h1>
 
-          <p v-if="description" class="mt-4 text-lg tracking-tight text-gray-600 dark:text-gray-300">
+          <p v-if="description" class="mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300">
             {{ description }}
           </p>
         </div>

@@ -30,7 +30,7 @@ defineProps<{
       </UContainer>
     </div>
 
-    <UContainer class="py-20">
+    <UContainer class="pb-20">
       <Code :code="data" />
     </UContainer>
   </div>
