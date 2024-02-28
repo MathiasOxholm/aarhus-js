@@ -19,7 +19,7 @@ defineProps<{
         </p>
 
         <UButton 
-          :to="data.hero?.ctaLink.url" 
+          :to="data.hero?.ctaLink?.url" 
           class="mt-10"
           size="xl"
           icon="i-heroicons-fire"
